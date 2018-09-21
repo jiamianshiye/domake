@@ -8,9 +8,9 @@ MUL_PATH = $(DO_MAKE_BASE)/mul
 
 
 
-OBJS = $(subst .c,.o,$(FILES))
+#OBJS = $(subst .c,.o,$(FILES))
 
-OBJ_PATH = 
+#OBJ_PATH = 
 
 
 

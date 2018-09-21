@@ -1,4 +1,7 @@
 #include "add.h"
+#include "minus.h"
+#include "mul.h"
+#include "divide.h"
 int main(int argc, char *argv[])
 {
     int a = 10, b = 20;

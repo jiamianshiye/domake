@@ -1,25 +1,42 @@
 include rules.mk
+include header.mk
+
+srcs:=\
+	main.c
 
 
-#TARGET = calc
-#OBJECT := main.o add.o divide.o minus.o mul.o
-DIR:=./add\
-	./divide\
-	./minus\
-	./mul
+LIBS +=\
+	./lib/add.a\
+	./lib/divide.a\
+	./lib/mul.a\
+	./lib/minus.a
 
-all: add divide minus mul
+all:add_mod divide_mod minus_mod mul_mod domake
+	@echo "-----get files : $(FILES)"
 
+add_mod:
+	@echo  "get add doing, obj[$(OBJ_BASE_DIR)]\n"
+	$(MAKE) -fMAKE.mk -C$(ADD_PATH) all
 
-add:
-	(MAKE) -f -CMakefile 	./add
+divide_mod:
+	@echo  "get divide doing, obj[$(OBJ_BASE_DIR)]\n"
+	$(MAKE) -fMAKE.mk -C$(DIV_PATH) all
 
-$(TARGET): $(obj)
-	CCX -o $(TARGET) $(obj)
+minus_mod:
+	@echo  "get minus doing, obj[$(OBJ_BASE_DIR)]\n"
+	$(MAKE) -fMAKE.mk -C$(MIN_PATH) all
 
+mul_mod:
+	@echo  "get mul doing, obj[$(OBJ_BASE_DIR)]\n"
+	$(MAKE) -fMAKE.mk -C$(MUL_PATH) all
 
-
-.PHONY : clean
+domake:
+	@echo "do make----------$(LIBS)"	
+	$(CC) $(FILES) $(LIBS) $(INCLUDE) -o $@
 
 clean:
-	-rm $(TARGET) 
+	$(MAKE) -fMAKE.mk -C$(ADD_PATH) clean
+	$(MAKE) -fMAKE.mk -C$(DIV_PATH) clean
+	$(MAKE) -fMAKE.mk -C$(DIV_PATH) clean
+	$(MAKE) -fMAKE.mk -C$(MUL_PATH) clean
+

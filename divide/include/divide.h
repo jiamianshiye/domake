@@ -2,4 +2,6 @@
 #define DIVIDE_H
 
 
+int divide(int a, int b);
+
 #endif
