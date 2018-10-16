@@ -5,13 +5,15 @@ srcs:=\
 	main.c
 
 
-LIBS +=\
+#LIBS +=\
 	./lib/add.a\
 	./lib/divide.a\
 	./lib/mul.a\
 	./lib/minus.a
 
-all:add_mod divide_mod minus_mod mul_mod domake
+LIBS += ./lib/*.a
+APP = domake
+all:add_mod divide_mod minus_mod mul_mod $(APP)
 	@echo "-----get files : $(FILES)"
 
 add_mod:
@@ -37,6 +39,7 @@ domake:
 clean:
 	$(MAKE) -fMAKE.mk -C$(ADD_PATH) clean
 	$(MAKE) -fMAKE.mk -C$(DIV_PATH) clean
-	$(MAKE) -fMAKE.mk -C$(DIV_PATH) clean
+	$(MAKE) -fMAKE.mk -C$(MIN_PATH) clean
 	$(MAKE) -fMAKE.mk -C$(MUL_PATH) clean
+	-rm $(APP)
 

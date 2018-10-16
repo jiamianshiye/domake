@@ -14,7 +14,7 @@ SO_LIB = $(EXE_BASE_DIR)/lib$(MODULE).so
 %.o:%.c
 	@echo \#$(MODULE) : Compiling $<, \n    obj dir[$(OBJ_DIR)] 
 	@echo \#$(MODULE) : Compiling $<, \n domake[$(DO_MAKE_BASE)],exe[$(EXE_BASE_DIR)]
-	@echo \#$(MODULE) : Compiling $<, \n lib[$(LIB_BASE_DIR)]
+	@echo \#$(MODULE) : Compiling $<, \n INCLUDE[$(INCLUDE)]
 	$(CC) $(CC_OPTS) $(INCLUDE) -o$(OBJ_DIR)/$@ $<
  
 lib : $(LIB_DIR)/$(LIB)

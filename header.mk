@@ -19,7 +19,7 @@ LIB_DIR = $(LIB_BASE_DIR)
 
 vpath %.a $(LIB_DIR)
 
-INCLUDE =
+#INCLUDE =
 INCLUDE += -I$(ADD_PATH)/include
 INCLUDE += -I$(DIV_PATH)/include
 INCLUDE += -I$(MUL_PATH)/include
