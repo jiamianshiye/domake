@@ -9,8 +9,12 @@ int main(int argc, char *argv[])
 
 
     c = add(a, b);
+    printf("%d\n", c);
     c = minus(c, b);
+    printf("%d\n", c);
     a = divide(c, b);
+    printf("%d\n", a);
     c = mul(a, b);
+    printf("%d\n", c);
     return 0;
 }

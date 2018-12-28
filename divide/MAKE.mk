@@ -6,11 +6,12 @@ demo:
 	#$(MAKE) -fMAKE.mk apps TARGET=exe
 
 apps:
-	$(MAKE) -f Makefile -C./src MODULE=divide $(TARGET)
+	$(MAKE) -f Makefile -C./src $(TARGET)
 	@echo \# Got  module[$(MODULE)]...
 
 libs:
-	$(MAKE) -f Makefile -C./src/ MODULE=divide $(TARGET) 
+	mkdir $(DO_MAKE_BASE)/lib/ -p	
+	$(MAKE) -f Makefile -C./src/ $(TARGET) 
 	@echo \# Got  module[$(MODULE)]...
 
 clean:
