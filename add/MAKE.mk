@@ -18,4 +18,4 @@ clean:
 	$(MAKE) -fMAKE.mk libs TARGET=clean
 	
 
-all:clean demo
+all:demo
